@@ -21,16 +21,16 @@ OVERLAP = 45
 
 #     return model.infer(image, {"confidence": CONFIDENCE, "overlap": OVERLAP})
 
-def extract_words_from_letter(letter_path):
+def create_roboflow_model():
     load_dotenv()
 
     rf = roboflow.Roboflow(api_key=os.getenv('ROBOFLOW_API_KEY'))
     project = rf.workspace().project("el-makina")
     model = project.version("3").model
 
-    model.confidence = CONFIDENCE
-    model.overlap = OVERLAP
+    return model
 
+def extract_words_from_letter(model, letter_path):
     return model.predict(letter_path)
 
 def order_boxes(predictions):
@@ -82,7 +82,7 @@ def order_boxes(predictions):
 
     return sorted_boxes
 
-def save_boxes(predictions, letter_path):
+def save_boxes(predictions, letter_path, result_path):
     original = Image.open(letter_path)
     letter_name = letter_path.split("/")[-1].split(".")[0]
 
@@ -92,4 +92,4 @@ def save_boxes(predictions, letter_path):
         x1, y1, x2, y2 = box['coordinates']
 
         box = original.crop((x1, y1, x2, y2))
-        box.save(f"data/text_extraction/{letter_name}_{i}.jpg")
+        box.save(f"{result_path}/{letter_name}_{i}.jpg")
