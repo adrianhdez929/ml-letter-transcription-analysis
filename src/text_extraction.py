@@ -1,6 +1,6 @@
 import os
 import roboflow
-# from inference import get_model
+import matplotlib as plt
 import numpy as np
 from dotenv import load_dotenv
 from PIL import Image
@@ -9,17 +9,6 @@ from PIL import Image
 # hyperparameters
 CONFIDENCE = 20
 OVERLAP = 45
-
-# def extract_words_from_letter(letter_path):
-#     load_dotenv()
-
-#     image = Image.open(letter_path)
-
-#     api_key = os.getenv('ROBOFLOW_API_KEY')
-
-#     model = get_model(model_id="el-makina/3", api_key=api_key)
-
-#     return model.infer(image, {"confidence": CONFIDENCE, "overlap": OVERLAP})
 
 def create_roboflow_model():
     load_dotenv()
@@ -93,3 +82,30 @@ def save_boxes(predictions, letter_path, result_path):
 
         box = original.crop((x1, y1, x2, y2))
         box.save(f"{result_path}/{letter_name}_{i}.jpg")
+
+def read_and_show(image_path):
+    """
+    :param image_path: String, path to the input image.
+
+
+    Returns:
+        image: PIL Image.
+    """
+    image = Image.open(image_path).convert('RGB')
+    return image
+
+def ocr(image, processor, model, device):
+    """
+    :param image: PIL Image.
+    :param processor: Huggingface OCR processor.
+    :param model: Huggingface OCR model.
+    :param devie: Pytorch device.
+
+
+    Returns:
+        generated_text: the OCR'd text string.
+    """
+    pixel_values = processor(image, return_tensors='pt').pixel_values.to(device)
+    generated_ids = model.generate(pixel_values)
+    generated_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
+    return generated_text

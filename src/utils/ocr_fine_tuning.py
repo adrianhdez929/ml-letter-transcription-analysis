@@ -124,9 +124,43 @@ def compute_cer(pred, processor):
     
     return {"cer": cer}
 
+def get_device():
+    return torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+
+def get_model(device, processor):
+    model = VisionEncoderDecoderModel.from_pretrained(ModelConfig.MODEL_NAME)
+    model.to(device)
+    print(model)
+    # Total parameters and trainable parameters.
+    total_params = sum(p.numel() for p in model.parameters())
+    print(f"{total_params:,} total parameters.")
+    total_trainable_params = sum(
+    p.numel() for p in model.parameters() if p.requires_grad)
+    print(f"{total_trainable_params:,} training parameters.")
+
+    # Set special tokens used for creating the decoder_input_ids from the labels.
+    model.config.decoder_start_token_id = processor.tokenizer.cls_token_id
+    model.config.pad_token_id = processor.tokenizer.pad_token_id
+    # Set Correct vocab size.
+    model.config.vocab_size = model.config.decoder.vocab_size
+    model.config.eos_token_id = processor.tokenizer.sep_token_id
+    
+    model.config.max_length = 64
+    model.config.early_stopping = True
+    model.config.no_repeat_ngram_size = 3
+    model.config.length_penalty = 2.0
+    model.config.num_beams = 4
+
+    return model
+
+def get_trained_model(device, processor):
+    return VisionEncoderDecoderModel.from_pretrained('trocr_handwritten/checkpoint-'+str(processor.global_step)).to(device)
+
+
 def train_ocr():
     seed_everything(42)
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = get_device()
 
     train_df = pd.read_csv(
         os.path.join(DatasetConfig.DATA_ROOT, 'ocr_words_train.csv'),
@@ -154,28 +188,7 @@ def train_ocr():
         processor=processor
     )
 
-    model = VisionEncoderDecoderModel.from_pretrained(ModelConfig.MODEL_NAME)
-    model.to(device)
-    print(model)
-    # Total parameters and trainable parameters.
-    total_params = sum(p.numel() for p in model.parameters())
-    print(f"{total_params:,} total parameters.")
-    total_trainable_params = sum(
-    p.numel() for p in model.parameters() if p.requires_grad)
-    print(f"{total_trainable_params:,} training parameters.")
-
-    # Set special tokens used for creating the decoder_input_ids from the labels.
-    model.config.decoder_start_token_id = processor.tokenizer.cls_token_id
-    model.config.pad_token_id = processor.tokenizer.pad_token_id
-    # Set Correct vocab size.
-    model.config.vocab_size = model.config.decoder.vocab_size
-    model.config.eos_token_id = processor.tokenizer.sep_token_id
-    
-    model.config.max_length = 64
-    model.config.early_stopping = True
-    model.config.no_repeat_ngram_size = 3
-    model.config.length_penalty = 2.0
-    model.config.num_beams = 4
+    model = get_model(device, processor)
 
     optimizer = optim.AdamW(
         model.parameters(), lr=TrainingConfig.LEARNING_RATE, weight_decay=0.0005
