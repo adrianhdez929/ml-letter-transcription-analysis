@@ -1,3 +1,4 @@
+Pillow
 scikit-learn
 tensorflow
 numpy
