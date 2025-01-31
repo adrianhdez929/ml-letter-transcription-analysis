@@ -1,0 +1,90 @@
+\documentclass[11pt,a4paper]{article}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{booktabs}
+
+% Title and author information
+\title{Transcripción y análisis de sentimientos de las cartas de Máximo Gómez}
+
+\author{
+    Adrian Hernández Santos\\
+    Alejandro Alvarez Lamazares\\
+    Frank Pérez Fleitas\\
+    Eisler Valles Rodríguez\\
+    \vspace{5cm}
+    Rafael Acosta Márquez\\
+    \small{Facultad de Matemática y Computación}\\
+    \small{Universidad de La Habana}
+}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Descripción General}
+Nuestro problema consiste en extraer el texto de una colección de las cartas del Generalísimo Máximo Gómez y realizar un análisis de sentimientos al dicho resultado.
+
+\section{Características de los datos}
+Los datos provistos están conformados por fotos de cartas históricas escritas a mano por Gómez. Al ser documentos históricos, algunos están dañados por quemaduras, desgaste del papel, rasgados, por lo que algunas presentan incompletitud en los propios datos a procesar. También cabe destacar que el color del papel no es constante, hay tonos más claros, más oscuros, con manchas de humedad, incluso con hojas rayadas (con los renglones escritos). Además, existe un subconjunto de cartas mecanografiadas y algunas completadas por terceras personas. La cantidad de cartas es alrededor de 160, junto con las cartas personales enviadas a Lola Tió.
+
+\section{Análisis del estado del arte}
+Se realizó un análisis del estado del arte respecto al tema: "Reconocimiento de texto manuscrito y análisis de sentimiento". Se encontraron diversos enfoques, desde el uso de CNN (redes neuronales de convolución) y SVM para la extracción de texto, hasta Naive Bayes y SVM nuevamente en el análisis de sentimiento. Estas propuestas fueron descartadas debido a la falta de datos suficientes para entrenar adecuadamente estos modelos. Finalmente, se decidió utilizar YOLOv11 y TrOCR para la extracción del texto y un modelo basado en RoBERTa para el análisis de sentimientos, empleando modelos preentrenados.
+
+\section{Extracción de texto manuscrito}
+\subsection{Selección de características}
+Dada la variabilidad de los datos, se decidió convertir las imágenes a escala de grises para minimizar el sesgo introducido por variaciones en el color del fondo y la tinta. Se optó por detectar palabras individuales mediante el entrenamiento de un modelo YOLOv11 en un subconjunto de los datos. Se usó Roboflow para anotar las "bounding boxes" con un único label "word", entrenando el modelo para detectar bloques contiguos de escritura.
+
+\subsection{Evaluación del modelo YOLOv11}
+Para evaluar el modelo YOLOv11, se emplearon las métricas \textit{mAP}, \textit{Accuracy}, \textit{Precision} y \textit{Recall}:
+
+\begin{itemize}
+    \item mAP: 0.94
+    \item Precisión: 0.89
+    \item Recall: 0.942
+\end{itemize}
+
+Estos valores reflejan un buen rendimiento en la detección de bloques de texto manuscrito. Se ajustaron los hiperparámetros con un umbral de confianza del 20\% y un solapamiento del 45\% para mejorar la diferenciación entre imágenes con líneas estrechas y letras con trazos alargados.
+
+\subsection{Extracción del texto de las palabras}
+Una vez extraídas las imágenes de las palabras, se utilizó el modelo TrOCR de HuggingFace: \texttt{microsoft/trocr-small-handwritten}. Se intentó hacer \textit{fine tuning} con las imágenes anotadas, pero no fue posible debido a limitaciones de procesamiento y tiempo.
+
+\subsection{Evaluación del modelo TrOCR}
+Se emplearon las métricas \textit{Precision}, \textit{Recall}, \textit{CER} (Character Error Rate), \textit{WER} (Word Error Rate), \textit{F1} y \textit{Accuracy}:
+
+\begin{itemize}
+    \item Accuracy: 0.0000
+    \item Precision: 0.0000
+    \item Recall: 0.0000
+    \item F1: 0.0000
+    \item CER: 14.4978
+    \item WER: 9.7353
+\end{itemize}
+
+Estos resultados indican un mal ajuste del modelo a nuestros datos. Se espera que el \textit{fine tuning} mejore estos valores.
+
+\section{Análisis de sentimientos}
+Dado el conjunto reducido de datos, se optó por un modelo preentrenado basado en RoBERTa, optimizado para español. Aunque este modelo fue entrenado con textos modernos, se aceptó este sesgo por la falta de alternativas más adecuadas.
+
+\subsection{Evaluación del modelo de análisis de sentimientos}
+Se emplearon las métricas \textit{Accuracy}, \textit{Precision}, \textit{Recall} y \textit{F1}:
+
+\begin{itemize}
+    \item Accuracy: 0.7857
+    \item Precision: 0.8190
+    \item Recall: 0.7857
+    \item F1: 0.7852
+\end{itemize}
+
+Estos resultados indican que la elección del modelo fue correcta, aunque un \textit{fine tuning} con textos históricos podría mejorar su desempeño.
+
+\section{Conclusiones}
+A pesar de no poder realizar el \textit{fine tuning} en la extracción de texto, las métricas obtenidas en los modelos previos fueron alentadoras. Con más tiempo y mejor equipo de cómputo, se podría obtener un resultado óptimo. Esta experiencia podría ser útil para la Oficina del Historiador de la Ciudad u otras instituciones con colecciones de manuscritos históricos. Se recomienda complementar el sistema con herramientas basadas en Modelos de Lenguaje de Gran Escala (LLMs) para mejorar la calidad de la transcripción.
+
+\end{document}
