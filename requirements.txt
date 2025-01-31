@@ -4,3 +4,13 @@ tensorflow
 numpy
 pandas
 matplotlib
+transformers==4.45.0
+roboflow
+jiwer
+dotenv
+torch
+evaluate
+glob
+dataclasses
+unidecode
+pysentimiento
