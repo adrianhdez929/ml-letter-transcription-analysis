@@ -1,9 +1,14 @@
 import os
 import roboflow
-import matplotlib as plt
 import numpy as np
+import pandas as pd
 from dotenv import load_dotenv
 from PIL import Image
+from jiwer import cer, wer
+from transformers import TrOCRProcessor
+
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+from utils.ocr_fine_tuning import get_model, DatasetConfig, ModelConfig, get_device
 
 
 # hyperparameters
@@ -109,3 +114,34 @@ def ocr(image, processor, model, device):
     generated_ids = model.generate(pixel_values)
     generated_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
     return generated_text
+
+def prepare_vectors():
+    data = pd.read_csv(
+        os.path.join(DatasetConfig.DATA_ROOT, 'ocr_words_train.csv'),
+        header=None,
+        skiprows=1,
+        names=['image_filename', 'text']
+    )
+
+    return [x for x in data['image_filename'][:100]], [x for x in data['text'][:100]]
+
+def evaluate_ocr():
+    device = get_device()
+    processor = TrOCRProcessor.from_pretrained(ModelConfig.MODEL_NAME)
+    model = get_model(device, processor)
+
+    x_input, y_input = prepare_vectors()
+    y_pred = [ocr(read_and_show(os.path.join(DatasetConfig.DATA_ROOT, x)), processor, model, device) for x in x_input]
+
+    cer_score = cer(y_input, y_pred)
+    wer_score = wer(y_input, y_pred)
+    accuracy = accuracy_score(y_input, y_pred)
+    precision, recall, f1, _ = precision_recall_fscore_support(y_input, y_pred, average="weighted")
+
+    print(f"Accuracy: {accuracy:.4f}")
+    print(f"Precision: {precision:.4f}, Recall: {recall:.4f}, F1-score: {f1:.4f}")
+    print(f"CER score: {cer_score:.4f}")
+    print(f"WER score: {wer_score:.4f}")
+
+if __name__ == "__main__":
+    evaluate_ocr()

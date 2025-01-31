@@ -106,7 +106,6 @@ def visualize(dataset_path, df):
         names=['image_filename', 'text'],
         nrows=50
     )
-# visualize(DatasetConfig.DATA_ROOT, sample_df)
 
 def compute_cer(pred, processor):
     cer_metric = evaluate.load('cer')
@@ -119,8 +118,7 @@ def compute_cer(pred, processor):
     label_str = processor.batch_decode(labels_ids, skip_special_tokens=True)
     
     
-    cer = cer_metric.compute(predictions=pred_str, references=label_str)
-    
+    cer = cer_metric.compute(predictions=pred_str, references=label_str)    
     
     return {"cer": cer}
 
@@ -133,11 +131,11 @@ def get_model(device, processor):
     model.to(device)
     print(model)
     # Total parameters and trainable parameters.
-    total_params = sum(p.numel() for p in model.parameters())
-    print(f"{total_params:,} total parameters.")
-    total_trainable_params = sum(
-    p.numel() for p in model.parameters() if p.requires_grad)
-    print(f"{total_trainable_params:,} training parameters.")
+    # total_params = sum(p.numel() for p in model.parameters())
+    # print(f"{total_params:,} total parameters.")
+    # total_trainable_params = sum(
+    # p.numel() for p in model.parameters() if p.requires_grad)
+    # print(f"{total_trainable_params:,} training parameters.")
 
     # Set special tokens used for creating the decoder_input_ids from the labels.
     model.config.decoder_start_token_id = processor.tokenizer.cls_token_id
