@@ -1,0 +1,7 @@
+dada la siguiente carta necesito que me devuelvas un vector de clasificacion que cumpla con lo siguiente:
+
+carta -> [i,j]
+
+las posibilidades de cada parametro son 
+i = POS, NEG,NEU
+J = anger, joy, sadness, fear, surprise, disgust, neutral

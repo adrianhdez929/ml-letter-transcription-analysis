@@ -13,6 +13,8 @@ JOSÉ MARTÍ
 
 Léale esta carta al cariñoso Peón. Nadie pierde en esto más que yo, que quería tenerlo contento.
 
+[NEG, sadness]
+
 *
 
 Veracruz, 19 de enero de 1877
@@ -50,6 +52,8 @@ Prepárese en calma, que usted ayudará mucho a la firmeza moral de este país. 
 Carmen no me querría si yo fuera impaciente o ambicioso; ella y yo confiamos en que el tiempo de la obra ha de venir. En tanto, la mereceré calladamente. Le diré a usted cuanto vea y cuanto haga, cuanto trabaje y cuanto espere. Le encomendaré todavía, ahora que creo que gozan de algún bien, las tristezas de mi casa. Volveré a rogarle que vea a Carmen, y que halle medio natural de que se conozcan ella y Lola. La he dejado con la serenidad tranquila del esposo que confía mucho en su mujer.
 
 No le inquiete mi riesgo, que yo mismo no temo; el paquete francés le traerá carta, si no hubiere percance.
+[POS,sadness]
+
 *
 
 Acapulco, 9 de enero de 1877
@@ -69,7 +73,14 @@ Abrace muy apretadamente, por Carmen y por mí, a Lola. A Manuel, cordialísimos
 Su hermano,
 
 José Martí
+[NEG, sadness]
 
+(Justificación:
+
+    i = NEG: El tono general de la carta es melancólico y de despedida, reflejando tristeza por la partida.
+    j = sadness: La emoción predominante es la tristeza, especialmente por el adiós, la separación de seres queridos y el tono nostálgico del mensaje.
+
+)
 
 *
 
@@ -131,6 +142,11 @@ Su muy cariñoso hermano,
 JOSÉ MARTÍ
 
 Le envío —que usted sabrá dónde viven— carta para casa.
+[NEG, sadness]
+(Justificación:
+
+    i = NEG: Aunque hay reflexiones sobre la vida y la situación que se perciben como una mezcla de esperanza y preocupación, el tono general de la carta está marcado por la preocupación, la lucha interna y la tristeza por la situación de su familia y su propio bienestar.
+    j = sadness: La emoción predominante es la tristeza, particularmente relacionada con la separación de sus seres queridos, la nostalgia por su patria y el sufrimiento personal que atraviesa.)
 
 *
 
@@ -159,7 +175,18 @@ Salude a Lola, cuyo nombre me es siempre muy agradable pronunciar; bese a sus hi
 JOSÉ MARTÍ
 
 Bien sabe Manuel Ocaranza cómo me es agradable recordarlo.
+
+
+[NEG, sadness]
+(Justificación:
+
+    i = NEG: La carta refleja frustración, angustia y una lucha interna debido a las dificultades económicas y la incertidumbre en cuanto a los viajes y el futuro. La ausencia de respuestas claras y el retraso en los planes generan una atmósfera de tensión y preocupación.
+    j = sadness: La emoción predominante es la tristeza, especialmente ligada a la incertidumbre del futuro, el sacrificio personal y la preocupación por la situación de su familia y su separación de la persona que ama.)
+
 *
+
+
+
 Habana, 11 de febrero de 1877
 
 Mi muy querido amigo:
@@ -182,7 +209,12 @@ Dejo muchas veces a los que quiero más para decirles menos: así a Lola. A Ocar
 
 Su hermano,
 J. Martí
+[POS, joy]
+(Justificación:
 
+    i = POS: La carta refleja un tono optimista y de determinación. Martí expresa afecto sincero por su amigo, gratitud por el apoyo recibido y un firme propósito de continuar su camino con convicción. También hay una sensación de satisfacción por las decisiones tomadas y esperanza en el futuro.
+    j = joy: Predomina una emoción de alegría serena y agradecimiento, tanto por el vínculo con su amigo como por la claridad de sus decisiones. Además, hay entusiasmo por el viaje a Guatemala y confianza en su capacidad para enfrentar los desafíos.
+)
 *
 
 
@@ -206,7 +238,11 @@ Bese la mano a Lola, que por sus noblezas lo tiene merecido, abrace a Manuel; ha
 
 José Martí
 
+[POS, joy]
+(Justificación:
 
+    i = POS: La carta transmite un tono positivo, con reflexiones llenas de optimismo y determinación. Martí expresa gratitud por el apoyo recibido, confianza en su camino y en la bondad de las personas, así como una visión esperanzadora de su futuro personal y familiar.
+    j = joy: Predomina una sensación de alegría serena, motivada por el amor que siente por Carmen, la fortaleza que le brindan sus creencias, y el entusiasmo por sus proyectos personales, como el viaje y su libro en progreso. También hay satisfacción en la conexión afectiva con su amigo y la contemplación de la naturaleza.)
 *
 
 Guatemala, abril 13 de 1877
@@ -255,7 +291,14 @@ J. MARTÍ
 
 Iba a escribir a usted sobre mis libros, pero dos cartas desgarradoras de Carmen aterran mi espíritu. ¡Hábleme de ella! 
 
+[POS, sadness]
+(Explicación:
 
+    POS (Positivo): Aunque hay momentos de molestia y reflexiones serias, el tono general de la carta refleja esperanza, cariño, admiración por el entorno y afecto hacia las personas mencionadas.
+
+    sadness (Tristeza): La tristeza se percibe en varios fragmentos, especialmente cuando habla de las cartas desgarradoras de Carmen, sus luchas internas y la sensación de estar lejos de sus seres queridos.
+	
+	)
 *
 
 Día 11 de agosto de 1877
@@ -278,7 +321,12 @@ Salude a los que me quieren; vivo afecto a Lola, y un abrazo a Manuel, a quien s
 
 Perdone sus vaguedades a su hermano cariñosísimo,
 J. Martí
+[NEG,sadness]
+(Justificación:
 
+    NEG (Negativo): La carta está cargada de melancolía, reflexiones dolorosas y un tono general de tristeza, soledad y pesimismo existencial.
+    sadness (Tristeza): Los sentimientos predominantes son la soledad, la nostalgia por los seres queridos, y una sensación de vacío emocional. Martí habla de sus "amarguras" y de cómo el vivir mismo le causa dolor, lo que refuerza el tono triste de la carta.
+	)
 *
 
 21 de septiembre de 1877
@@ -313,7 +361,13 @@ A Peón, que se prepare a leerme el nuevo drama. A Sánchez Solís, que he de ha
 
 Su hermano,
 J. Martí
+[NEG,sadness]
+(Justificación:
 
+    NEG (Negativo): La carta transmite un sentimiento profundo de dolor, decepción y conflictos emocionales. Martí expresa su sufrimiento interno, la falta de gratitud, la soledad, y la lucha con sus propias aspiraciones frustradas.
+    sadness (Tristeza): El tono melancólico se mantiene a lo largo de toda la carta. Habla de sus amarguras, temores, dolores del alma, y reflexiona sobre sus dificultades personales y espirituales, lo que refuerza la sensación de tristeza predominante.
+	
+	)
 *
 
 
@@ -338,3 +392,9 @@ He aquí que dan las tres. A su hijo, el que hubiera servido de tipo para una ac
 
 Usted quiera a su hermano,
 J. Martí
+[POS,sadness]
+(Justificación:
+
+    POS (Positivo): Aunque la carta aborda temas de tristeza y reflexión, también transmite sentimientos de afecto, respeto y esperanza en la paz interior. Martí expresa admiración por su amigo, cariño por su familia, y un deseo sincero de mantener los lazos afectivos.
+    sadness (Tristeza): La carta está impregnada de melancolía, especialmente cuando habla del sufrimiento ajeno, la brevedad de su vida y su percepción de que el dolor propio es más intenso que el ajeno. También hay tristeza en su resignación ante su propio destino y sus reflexiones sobre el sufrimiento de quienes ama.
+	)

@@ -14,6 +14,13 @@ Y hablan ahora de presupuestos y de muebles: he aquí muchos disgustos de la vid
 
 José Martí
 
+[POS, joy]
+(Justificación:
+
+    POS (Positivo): A pesar de las dificultades mencionadas, la carta transmite un fuerte sentimiento de aprecio y deseo de estar junto a la persona a la que va dirigida. Se destacan momentos de "dulces alegrías" e "inolvidables agradecimientos", lo que sugiere que, a pesar de la prisa y los disgustos, los sentimientos hacia Rosario son positivos y profundos.
+    sentimental (Sentimental): El tono de la carta es claramente emocional y personal. El autor expresa una necesidad emocional de estar cerca de Rosario y una frustración por no haber podido compartir más tiempo con ella. La mezcla de anhelo y melancolía prevalece en todo el mensaje.
+	)
+
 *
 [México, 1875]
 
@@ -28,6 +35,9 @@ Rosario, me parece que están despertándose en mí ternuras muy inefables; me p
 Tiene un alma de mujer enamorada con muy bellos embarazos, muy suspicaces precauciones, encantadoras reservas, puerilidades exquisitas. ¿Y a qué… las inconstancias y desfallecimientos de este espíritu mío, tan enamorado de la luz que todo lo necesita para sus amores sin mancha y sin tinieblas? Rosario, Rosario, yo he empezado a amar ya en sus ojos un candor que en tanto grado vino en ellos, que ni usted misma sospecha que todavía vive en usted en tanto grado...
 
 José Martí
+[POS, neutral]
+(POS (Positivo): La carta refleja sentimientos profundos y positivos hacia Rosario. Se expresa una paz suave y satisfecha, junto con un amor incondicional y una profunda admiración hacia ella. El tono es generalmente afectuoso y lleno de sentimientos sinceros.
+sentimental (Sentimental): La carta está llena de emociones complejas y sentimientos personales. Martí expresa sus pensamientos y sentimientos de manera introspectiva, transmitiendo la importancia emocional que tiene Rosario en su vida.)
 
 *
 
@@ -54,3 +64,8 @@ No hay inmodestia en las supremas angustias de mi espíritu. Rosario, vivo en el
 Esfuércese usted; vénzame. Yo necesito encontrar ante mi alma una explicación, un deseo, un motivo justo, una disculpa noble de mi vida. De cuantas vi, nadie más que usted podría. Y hace cuatro o seis días que tengo frío.
 
 José Martí
+[NEG, sadness]
+(Justificación:
+
+    NEG (Negativo): La carta está dominada por sentimientos de angustia, sufrimiento y dolor. Martí describe una profunda insatisfacción con su vida y la sensación de vacío existencial, lo cual refleja un tono negativo.
+    sadness (Tristeza): La carta está cargada de tristeza, evidenciada en las expresiones de dolor, angustia, y sufrimiento. Martí menciona repetidamente cómo las tristezas lo envuelven y lo sofocan, lo que refuerza la emoción de tristeza.)

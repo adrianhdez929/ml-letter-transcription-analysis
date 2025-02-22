@@ -14,6 +14,13 @@ Esta noche hay fiesta en la Academia de Pinturas, y yo me veo obligado a hablar,
 Le acompaño una invitación, por si quisiera usted ver cómo coronan al pintor Rebull e ir a perdonar las cosas violentas que dirá esta noche su afectísimo amigo.
 
 José Martí
+[NEG, disgust]
+(Justificación:
+
+    NEG (Negativo): La carta tiene un tono negativo, en especial debido a la referencia al malestar de Martí, quien menciona estar enfermo y disgustado. Además, menciona la necesidad de hablar a pesar de su estado, lo que refuerza el sentimiento de incomodidad.
+    disgust (Desgusto): Martí expresa claramente su desagrado por la situación, indicando que se siente "enfermo y disgustado", lo cual subraya una emoción de disgusto.
+
+)
 
 
 *
@@ -29,6 +36,12 @@ Tenía yo por esto una gratitud muy especial hacia los postulantes que me honrab
 Protestando mi agradecimiento duradero y mi sincera estima a la asociación que me recibió en su seno, lamento la necesidad en que me veo de renunciar al cargo de miembro de la Sociedad Gorostiza, y me repito su obligado y atento servidor.
 
 José Martí
+[NEG, neutral]
+(Justificación:
+
+    NEG (Negativo): Aunque la carta no expresa un sentimiento fuerte de ira o desdén, el acto de renunciar a un cargo y devolver el nombramiento muestra una actitud negativa hacia la situación, especialmente en relación con los eventos que llevaron a esta decisión.
+    neutral (Neutral): La carta tiene un tono respetuoso y formal, con agradecimientos y una renuncia educada, lo que refleja una emoción más neutral que un estado emocional negativo fuerte como tristeza o ira.
+	)
 
 *
 
@@ -47,7 +60,12 @@ Si interesa a usted que haga yo esta rectificación en el periódico, sírvase d
 Su amigo y servidor,
 
 José Martí
+[POS, neutral]
+(Justificación:
 
+    POS (Positivo): La carta expresa una actitud amistosa y respetuosa, donde se muestra un sentimiento positivo hacia la persona a quien se dirige, con la mención de un lazo de fraternidad y simpatía.
+    neutral (Neutral): Aunque la carta es positiva, tiene un tono formal y no expresa una emoción intensa de alegría, sorpresa o cualquier otro estado emocional marcado, por lo que el tono general puede clasificarse como neutral.
+	)
 *
 
 A FRANCISCO ZAYAS BAZÁN
@@ -64,7 +82,12 @@ Tengo perpetuo día de fiesta con su amorosa y respetable carta. Su hijo me llam
 Abrácese a sus hijas, —todas ellas excelentes criaturas, y estime y quiera a su hijo nuevo.
 
 José Martí
+[POS, joy]
+(Justificación:
 
+    POS (Positivo): La carta expresa un tono positivo y afectuoso hacia el destinatario, destacando sentimientos de gratitud y cariño, como en la mención del amor hacia "mi Carmen de mi vida" y el deseo de devolverle la calma, juventud y alegría a la persona a la que se dirige.
+    joy (Felicidad): El tono general de la carta refleja una sensación de gozo y satisfacción, como se expresa en frases como "Tengo perpetuo día de fiesta con su amorosa y respetable carta" y "crezca cada día el amor que le inspiro", lo que indica una emoción de felicidad y entusiasmo.
+	)
 *
 
 A GENERAL GÓMEZ
@@ -86,3 +109,10 @@ No extrañe este lenguaje. Cuando se sirve bien a la patria, se tienen en todas 
 José Martí
 Mi dirección:
 Guatemala
+[NEU, neutral]
+(Justificación:
+
+    NEU (Neutral): La carta expresa una comunicación principalmente informativa y reflexiva, con una mezcla de admiración por la figura del General Gómez y un tono de humildad en cuanto a las propias circunstancias del autor. No tiene una carga emocional claramente positiva ni negativa, ya que se centra en el pedido de información y la explicación de la situación del autor.
+    neutral (Neutral): El tono de la carta es más neutro, centrado en hechos históricos, el pedido de información y reflexiones sobre la vida personal del autor. Aunque hay una cierta admiración por los que luchan, no se expresa una emoción fuerte de enojo, tristeza o alegría.
+
+)
