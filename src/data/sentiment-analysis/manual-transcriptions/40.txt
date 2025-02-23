@@ -1,4 +1,9 @@
 Mi estimada Isabel. Con mucho gusto los esperamos aqui el martes. Debo suponer que me cometerás la atrocidad de dejar a Ramirito. Iré a verlos antes de ese día. Bien sabes cuanto te quiere tu padrino.
+<<<<<<< HEAD
 
 POS
 
+=======
+POS
+joy
+>>>>>>> 4cf6d3587edfec76b7a0a6adb9c05ab328013c34
