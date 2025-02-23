@@ -1,0 +1,118 @@
+Variado 
+
+A NICOLÁS DOMÍNGUEZ COWAN
+Revista Universal
+México, enero 31 de 1876
+
+Sr. Nicolás Domínguez Cowan
+Presente
+
+Nicolás:
+
+Esta noche hay fiesta en la Academia de Pinturas, y yo me veo obligado a hablar, enfermo y disgustado como me siento hoy. Me gustaría mucho ver en el salón caras amigas y benévolas.
+
+Le acompaño una invitación, por si quisiera usted ver cómo coronan al pintor Rebull e ir a perdonar las cosas violentas que dirá esta noche su afectísimo amigo.
+
+José Martí
+[NEG, disgust]
+(Justificación:
+
+    NEG (Negativo): La carta tiene un tono negativo, en especial debido a la referencia al malestar de Martí, quien menciona estar enfermo y disgustado. Además, menciona la necesidad de hablar a pesar de su estado, lo que refuerza el sentimiento de incomodidad.
+    disgust (Desgusto): Martí expresa claramente su desagrado por la situación, indicando que se siente "enfermo y disgustado", lo cual subraya una emoción de disgusto.
+
+)
+
+
+*
+
+AL PRESIDENTE DE LA SOCIEDAD GOROSTIZA
+
+Ciudadano Presidente de la Sociedad Gorostiza:
+
+Postulado para miembro de la Sociedad Gorostiza por el señor Ignacio Manuel Altamirano y el señor Juan de Dios Peza, según vi en un periódico de la capital, tuve la honra, y la guardé en el alma, de ser aceptado unánimemente.
+
+Tenía yo por esto una gratitud muy especial hacia los postulantes que me honraban con un acto espontáneo de generosa simpatía; pero acontecimientos posteriores me obligan a devolver mi nombramiento, ante mí vicioso por una postulación que, en la parte que cabe al señor Altamirano, no puedo aceptar.
+
+Protestando mi agradecimiento duradero y mi sincera estima a la asociación que me recibió en su seno, lamento la necesidad en que me veo de renunciar al cargo de miembro de la Sociedad Gorostiza, y me repito su obligado y atento servidor.
+
+José Martí
+[NEG, neutral]
+(Justificación:
+
+    NEG (Negativo): Aunque la carta no expresa un sentimiento fuerte de ira o desdén, el acto de renunciar a un cargo y devolver el nombramiento muestra una actitud negativa hacia la situación, especialmente en relación con los eventos que llevaron a esta decisión.
+    neutral (Neutral): La carta tiene un tono respetuoso y formal, con agradecimientos y una renuncia educada, lo que refleja una emoción más neutral que un estado emocional negativo fuerte como tristeza o ira.
+	)
+
+*
+
+A ADRIÁN SEGURA
+
+Señor Adrián Segura:
+
+Amigo mío:
+
+Acabo de recibir la atenta carta de usted. Diré a usted en respuesta a ella que el Adrián Segura que figura en la crónica que escribí para la Revista sobre la fiesta masónica del 21 es un joven zacatecano bastante elocuente, a quien aquella noche conocí por primera vez.
+
+Hubiera yo deseado que aquel Segura fuese usted, porque así me llevaría hacia usted un lazo más de fraternidad y simpatía.
+
+Si interesa a usted que haga yo esta rectificación en el periódico, sírvase decírmelo, y cumpliré al instante este deber de justicia.
+
+Su amigo y servidor,
+
+José Martí
+[POS, neutral]
+(Justificación:
+
+    POS (Positivo): La carta expresa una actitud amistosa y respetuosa, donde se muestra un sentimiento positivo hacia la persona a quien se dirige, con la mención de un lazo de fraternidad y simpatía.
+    neutral (Neutral): Aunque la carta es positiva, tiene un tono formal y no expresa una emoción intensa de alegría, sorpresa o cualquier otro estado emocional marcado, por lo que el tono general puede clasificarse como neutral.
+	)
+*
+
+A FRANCISCO ZAYAS BAZÁN
+Progreso, 28 de febrero de 1877
+
+Las grandes acciones deciden pronto de los grandes parentescos; ya sé como debo comenzar a usted mis cartas: —padre mío. Me da usted mi mayor riqueza, y mejor gloria; me da usted a mi Carmen de mi vida. Merecida la tengo con mi alma, y aún más la mereceré con mis trabajos; pero los nuevos años de mi existencia, ya florida, serán para consolar las soledades de quien con tan noble facilidad la envía de brazos a los míos.
+
+Hablaría a usted largamente de mis esperanzas y firmezas, y de los pintorescos y peligrosos accidentes de mi viaje; pero esperan por mí para cerrar la valija del correo. No creo en los éxitos fantásticos; pero sí creo en las honradeces productivas. Tengo fe en el cariño que me impulsa, y en la tenacidad de mi carácter;—téngala usted en mi palabra ardiente, en la sinceridad que me capta amigos, en la solidez de mi conducta, en esta fuerza extraña con que suelo conmover y entusiasmar;—riquezas que suelen ser tardías, sin ser por eso menos valiosas y reales, pero que en un solo día de fortuna hacen el camino que una inteligencia común tarda toda una vida en recorrer. Dondequiera que he estado, he tenido, aun a pesar mío, halagador renombre;—y éste siempre me lo he conquistado en un día solo. Así logré a mi Carmen. Así haré mi fortuna. Nada en mí sigue hasta ahora la vía de las existencias ordinarias.
+
+Descontento termino esta carta, que gozo enseñando mi alma a usted. Conozco ya la suya, y es uno de mis más vivos deseos el de devolverle con las solicitudes de mi afecto la calma, la juventud y la alegría.
+
+Tengo perpetuo día de fiesta con su amorosa y respetable carta. Su hijo me llama en ella; crezca cada día el amor que le inspiro, como en mí crece la veneración cariñosa con que a mi alma hablo de usted.
+
+Abrácese a sus hijas, —todas ellas excelentes criaturas, y estime y quiera a su hijo nuevo.
+
+José Martí
+[POS, joy]
+(Justificación:
+
+    POS (Positivo): La carta expresa un tono positivo y afectuoso hacia el destinatario, destacando sentimientos de gratitud y cariño, como en la mención del amor hacia "mi Carmen de mi vida" y el deseo de devolverle la calma, juventud y alegría a la persona a la que se dirige.
+    joy (Felicidad): El tono general de la carta refleja una sensación de gozo y satisfacción, como se expresa en frases como "Tengo perpetuo día de fiesta con su amorosa y respetable carta" y "crezca cada día el amor que le inspiro", lo que indica una emoción de felicidad y entusiasmo.
+	)
+*
+
+A GENERAL GÓMEZ
+[1878]
+
+General:
+He conmovido muchas veces refiriendo la manera con que Vd. pelea: —la he escrito, la he hablado:—en lo moderno no le encuentro semejante: en lo antiguo tampoco. —Sea ésta una razón para que Vd. disculpe esta carta.
+
+Escribo un libro, y necesito saber qué cargos principales pueden hacerse a Céspedes, qué razones pueden darse en su defensa—que: puesto que escribo, es para defender. —Las glorias no se deben enterrar sino sacar a luz. Sobre todo, necesito saber qué fue una carta que Ignacio Agramonte envió a Céspedes sobre renuncia de mando y mantenimiento de pensión.
+
+A otros pudiera dirigirme: en V. fin. Como algún día he de escribir su historia, deseo comenzar ya haciendo colección de sus autógrafos.
+
+De mí: tal vez nadie le dé razón, Rafael Blende fue mi padre: de la escuela fui a la cárcel y a un presidio, y a un destierro, y a otro. —Aquí vivo, muerto de vergüenza porque no peleo. —Enfermo seriamente y fuertemente atado, pienso, veo y escribo. —Veo las pobrezas de estas tierras, y pienso con orgullo que nosotros no las tendremos.
+
+En tanto que, en silencio, admiro a los que lo merecen, y envidio a los que luchan, sírvase darme las noticias históricas que le pido, —que tengo prisa de estudiarlas y de publicar las hazañas escondidas de nuestros grandes hombres. —Seré ironista, ya que no puedo ser soldado.
+
+No extrañe este lenguaje. Cuando se sirve bien a la patria, se tienen en todas partes muchos amigos viejos. De los más ignorados, no de los oídos, es para el General ánimo; poco el mutilado silente.
+
+José Martí
+Mi dirección:
+Guatemala
+[NEU, neutral]
+(Justificación:
+
+    NEU (Neutral): La carta expresa una comunicación principalmente informativa y reflexiva, con una mezcla de admiración por la figura del General Gómez y un tono de humildad en cuanto a las propias circunstancias del autor. No tiene una carga emocional claramente positiva ni negativa, ya que se centra en el pedido de información y la explicación de la situación del autor.
+    neutral (Neutral): El tono de la carta es más neutro, centrado en hechos históricos, el pedido de información y reflexiones sobre la vida personal del autor. Aunque hay una cierta admiración por los que luchan, no se expresa una emoción fuerte de enojo, tristeza o alegría.
+
+)
