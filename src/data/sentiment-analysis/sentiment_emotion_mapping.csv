@@ -47,3 +47,5 @@ m_25.txt,POS,joy
 m_26.txt,NEG,sadness
 m_27.txt,POS,joy
 m_28.txt,NEU,neutral
+m_37.txt,NEG,fear
+m_38.txt,NEG,anger
