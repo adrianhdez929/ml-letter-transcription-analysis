@@ -49,4 +49,7 @@ m_27.txt,POS,joy
 m_28.txt,NEU,others
 m_37.txt,NEG,fear
 m_38.txt,NEG,anger
-m_39.txt,POS ,joy
+m_39.txt,POS,joy
+m_40.txt ,POS,joy
+m_41.txt,NEU,fear
+m_42.txt,POS,joy
