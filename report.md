@@ -36,21 +36,48 @@ Los resultados fueron los siguientes:
 - CER: 14.4978
 - WER: 9.7353
 
-Dichas metricas nos dan a entender que el modelo es pesimo ajustandose a nuestros datos, pues no pudo acertar en ningun caso, de ahi las scores de 0, aparte que se espera que los valores de CER y WER estren entre 0 y 1 (representando un porciento), pero al ser mayores que 1, implica que la tasa de error no es ni siquiera valida, pues los fallos son enormes. Esperamos que si se pudiera lograr hacer fine tuning estos resultados mejoren o al menos logren un mejor ajuste a nuestros datos, lo cual como se explico previamente no fue posible realizar.
+Dichas métricas nos dan a entender que el modelo es pésimo ajustándose a nuestros datos, pues no pudo acertar en ningún caso, de ahi las scores de 0, aparte que se espera que los valores de CER y WER estren entre 0 y 1 (representando un porciento), pero al ser mayores que 1, implica que la tasa de error no es ni siquiera valida, pues los fallos son enormes. Esperamos que si se pudiera lograr hacer fine tuning estos resultados mejoren o al menos logren un mejor ajuste a nuestros datos, lo cual como se explico previamente no fue posible realizar.
 
 ## Analisis de sentimientos
 Dado que nuestro conjunto de datos es bastante reducido, optamos por el uso de un modelo preentrenado, basado en RoBERTa, una version de BERT optimizada. Dicho modelo fue entrenado utilizando varios datasets en español, principalmente conteniendo tweets, reviews de productos, comentarios de peliculas, etc. Es sabido que el lenguaje moderno difiere bastante tanto gramatica como contextualmente del usado en documentos historicos, pero a falta de algo mas ajustado, se decidio aceptar dicho sesgo. Ademas, dichos datasets no son publicos y a pesar de solicitar acceso a ellos, hasta la fecha no hemos recibido respuesta.
 
-### Evaluacion del modelo de analisis de sentimientos
-En la evaluacion del modelo de analisis de sentimientos se utilizaron nuevamente las metricas de Accuracy, Precision, Recall y F1, ya que las clases son discretas, aunque el modelo tambien devuelve resultados continuos, pero decidimos solamente utilizar las clases discretas, puesto que una anotacion manual de los sentimientos de las cartas de forma continua es una tarea bastante tediosa y abierta a introducir sesgos innecesarios. 
+Luego se realizaron pruebas con un modelo no supervisado de clusters basado en K-Means. Se realizaron diferentes pruebas con diferentes cantidades de clusters, de 2 a 7, para comparar los resultados obtenidos y analizar si se pueden extraer datos extra a los retornados por pysentimiento y realizar comparaciones.
+
+### Preparacion y analisis de los datos:
+Se obtuvo una colección de cartas de José Martí a distintos remitentes, las cuales se mezclaron con las cartas de Máximo Gómez que teníamos previamente. Dicho epistolario se encuentra en formato PDF, se realizó la transcripción de un subconjunto de las cartas de este PDF. Pudimos observar que las cartas de nuestro apóstol tienen un marcado carácter pesimista, lo cual influyó en el análisis de sentimientos, pudimos apreciar que a pesar de en ciertos casos no estar refiriéndose a nada particularmente malo, el apóstol mantenía una forma de escritura formal y nostálgica, lo cual afecta el rendimiento del modelo mencionado anteriormente. Esto no nos imposibilitó sacar conclusiones y establecer métricas que veremos adelante.
+
+Al extraer las cartas del Epistolario, se realizó la anotación manual de aproximadamente 50 cartas. Luego, comparamos nuestras anotaciones con diferentes modelos de lenguaje disponibles en la web para tener una referencia de los datos, además de nuestra interpretación de estos. Luego de tener anotados los datos, ejecutamos el modelo preentrenado para ver sus resultados.
+
+Para codificar el texto de las cartas se utilizo un embedding, utilizando un modelo BERT multilenguaje: "paraphrase-multilingual-MiniLM-L12-v2".Luego de tener los vectores de características retornado por el embedder, se le aplica PCA a dicho vector, para reducir las dimensiones de nuestro problema y eliminar componentes potencialmente colineales y con alta correlación, lo que mejora el resultado de nuestro algoritmo de clusters.
+
+### Evaluación del modelo de analisis de sentimientos
+En la evaluación del modelo de análisis de sentimientos se utilizaron nuevamente las métricas de Accuracy, Precision, Recall y F1, ya que las clases son discretas, aunque el modelo también devuelve resultados continuos, pero decidimos solamente utilizar las clases discretas, puesto que una anotación manual de los sentimientos de las cartas de forma continua es una tarea bastante tediosa y abierta a introducir sesgos innecesarios. 
 Los resultados fueron:
 
-- Accuracy: 0.7857
-- Precision: 0.8190
-- Recall: 0.7857
-- F1: 0.7852
+Overall Metrics:
+Accuracy: 0.6667
 
-Estos resultados son bastante buenos, lo que nos permite determinar que la eleccion de modelo fue correcta, aunque se podria intentar hacer fine tuning si se encuentra una fuente de textos historicos mas grande y que sea posible anotar.
+Per-class Metrics:
+
+NEG:
+Precision: 0.7143
+Recall: 0.7895
+F1-score: 0.7500
+
+NEU:
+Precision: 0.3529
+Recall: 0.6667
+F1-score: 0.4615
+
+POS:
+Precision: 0.8947
+Recall: 0.5862
+F1-score: 0.7083
+
+Estos resultados son bastante buenos, dados los mencionados anteriormente, lo que nos permite determinar que la elección de modelo fue correcta. Se nota una falta de precisión en la categoría NEU, esto se explica con el marcado carácter pesimista que describimos al inicio, a pesar de no estar hablando de nada especialmente negativo (NEG). El modelo los identifica como tales y esto afecta grandemente la métrica de la clase NEG, la cual no tiene una puntuación tan baja dada la cantidad de cartas con carácter negativo en la muestra. Se necesita hacer fine tuning si se encuentra una fuente de textos históricos más grande y que sea posible anotar, para obtener resultados mas certeros.
+
+Para evaluar las iteraciones del modelo no supervisado se utilizaron las métricas Coeficiente de Silueta, Homogeneidad, Completitud y Media de Silueta, cuyos resultados para cada tamaño de cluster están provistos en el Jupyter Notebook relacionado con el tema de Análisis de Sentimientos.
+
 
 ### Conclusiones
-A pesar de que debido a no poder realizar el fine tuning del ultimo paso de la extraccion de texto y por tanto, no se pudo obtener resultados finales, las metricas de los modelos utilizados con respecto a los datos provistos de entrada fueron alentadoras. Esto nos da una idea de que con un poco de mas tiempo y mejor equipo de computo el problema puede ser resuelto con un buen resultado final. Ademas, esperamos que nuestra experiencia sea de utilidad en dominios similares, especialmente de ayuda a la Oficina del Historiador de la Ciudad que puede poseer colecciones de cartas o manuscritos historicos, de distintos autores, que por falta de una herramienta que solucione decentemente el problema, solamente tienen en su mano las imagenes de dichos documentos. Cabe destacar tambien que el resultado no va a ser perfecto, por lo que se sugiere tambien el uso de alguna herramienta basada en Grandes Modelos de Lenguaje (LLMs) para ayudar a corregir la salida y mejorar la calidad de la transcripcion.
+A pesar de que, debido a no poder realizar el fine tuning del último paso de la extracción de texto, y por tanto, no se pudo obtener resultados finales, las métricas de los modelos utilizados con respecto a los datos provistos de entrada fueron alentadoras. Esto nos da una idea de que con un poco más de tiempo y mejor equipo de cómputo el problema puede ser resuelto con un buen resultado final. Además, esperamos que nuestra experiencia sea de utilidad en dominios similares, especialmente de ayuda a la Oficina del Historiador de la Ciudad, que puede poseer colecciones de cartas o manuscritos históricos, de distintos autores, que por falta de una herramienta que solucione decentemente el problema, solamente tienen en su mano las imágenes de dichos documentos. Cabe destacar también que el resultado no va a ser perfecto, por lo que se sugiere también el uso de alguna herramienta basada en Grandes Modelos de Lenguaje (LLMs) para ayudar a corregir la salida y mejorar la calidad de la transcripción.
